@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% if events_tasks_list %}
+        <ul>
+            {% for obj in events_tasks_list %}
+                <li>{{ obj.title }} </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events or tasks are available.</p>
+    {% endif %}
+
+</body>
+</html>
