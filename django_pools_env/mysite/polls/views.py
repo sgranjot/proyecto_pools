@@ -15,8 +15,7 @@ class IndexView(generic.ListView):
         """Return the last five published questions (not including those set
         to be published in the future)"""
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
-            # __lte significa menor o igual que (less than or equal to)
-
+        # __lte significa menor o igual que (less than or equal to)
 
 
 class DetailView(generic.DetailView):
@@ -41,7 +40,7 @@ def vote (request, question_id):
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
-        return render(request, 'polls/detail.html', {'question': question,
+        return render(request, 'polls/eventDetail.html', {'question': question,
                                                     'error_message': "you didn´t select a choice."})
     else:
         selected_choice.votes += 1

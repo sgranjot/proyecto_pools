@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>{{ object.title }}</h1>
+
+    <p>
+        Descripción: {{ object.description }}
+    </p>
+    <p>
+        Hora de inicio: {{ object.start_time }}
+    </p>
+    <p>
+        Hora de fin: {{ object.end_time }}
+    </p>
+
+    <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
+
+</body>
+</html>

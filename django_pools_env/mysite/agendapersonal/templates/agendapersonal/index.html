@@ -6,15 +6,12 @@
 </head>
 <body>
 
-    {% if events_tasks_list %}
-        <ul>
-            {% for obj in events_tasks_list %}
-                <li>{{ obj.title }} </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No events or tasks are available.</p>
-    {% endif %}
+    <h1>Ver Eventos o Tareas</h1>
+
+    <ul>
+        <li><a href="{% url 'agendapersonal:indexEvent' %}"> Eventos</a></li>
+        <li><a href="{% url 'agendapersonal:indexTask' %}"> Tareas</a></li>
+    </ul>
 
 </body>
 </html>

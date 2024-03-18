@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Eventos:</h1>
+
+    {% if events_list %}
+        <ul>
+            {% for obj in events_list %}
+                <li><a href="{% url 'agendapersonal:eventDetail' obj.pk %}"> {{ obj.title }} </a> </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events are available.</p>
+    {% endif %}
+
+    <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
+
+</body>
+</html>

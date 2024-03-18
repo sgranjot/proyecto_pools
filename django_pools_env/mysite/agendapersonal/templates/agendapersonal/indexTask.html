@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Tareas:</h1>
+
+    {% if tasks_list %}
+        <ul>
+            {% for obj in tasks_list %}
+                <li>{{ obj.title }} </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks are available.</p>
+    {% endif %}
+
+    <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
+
+</body>
+</html>
