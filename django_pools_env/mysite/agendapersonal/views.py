@@ -35,3 +35,7 @@ class DetailEventView(generic.DetailView):
     template_name = 'agendapersonal/eventDetail.html'
     context_object_name = 'object'
 
+
+class CreateEventView(generic.CreateView):
+    model = Event
+

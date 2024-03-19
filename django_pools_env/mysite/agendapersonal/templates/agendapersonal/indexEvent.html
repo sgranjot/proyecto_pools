@@ -18,6 +18,8 @@
         <p>No events are available.</p>
     {% endif %}
 
+    <a href="{% url 'agendapersonal:createEvent' %}"><input type="button"  value="add"></input></a>
+    <br><br>
     <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
 
 </body>
