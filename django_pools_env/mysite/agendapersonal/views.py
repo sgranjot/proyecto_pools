@@ -4,7 +4,7 @@ from django.views import generic
 from django.utils import timezone
 from django.urls import reverse, reverse_lazy
 
-from .forms import EventForm, TaskForm
+from .forms import CreateEventForm, UpdateEventForm, CreateTaskForm, UpdateTaskForm
 
 from .models import Event, Task
 
@@ -46,14 +46,42 @@ class DetailTaskView(generic.DetailView):
 
 class CreateEventView(generic.CreateView):
     model = Event
-    form_class = EventForm
+    form_class = CreateEventForm                                      #si no personalizamos el formulario pondriamos: fields = ['title', 'description', 'fechaInicio', 'fechaFin']
     template_name = 'agendapersonal/createEvent.html'
     success_url = reverse_lazy('agendapersonal:indexEvent')
 
 
 class CreateTaskView(generic.CreateView):
     model = Task
-    form_class = TaskForm
+    form_class = CreateTaskForm
     template_name = 'agendapersonal/createTask.html'
     success_url = reverse_lazy('agendapersonal:indexTask')
+
+
+class UpdateEventView(generic.UpdateView):
+    model = Event
+    form_class = UpdateEventForm
+    template_name = 'agendapersonal/updateEvent.html'
+    success_url = reverse_lazy('agendapersonal:indexEvent')
+
+
+class UpdateTaskView(generic.UpdateView):
+    model = Task
+    form_class = UpdateTaskForm
+    template_name = 'agendapersonal/updateTask.html'
+    success_url = reverse_lazy('agendapersonal:indexTask')
+
+
+class DeleteEventView(generic.DeleteView):
+    model = Event
+    template_name = 'agendapersonal/deleteEvent.html'
+    success_url = reverse_lazy('agendapersonal:indexEvent')
+
+
+class DeleteTaskView(generic.DeleteView):
+    model = Task
+    template_name = 'agendapersonal/deleteTask.html'
+    success_url = reverse_lazy('agendapersonal:indexTask')
+
+
 

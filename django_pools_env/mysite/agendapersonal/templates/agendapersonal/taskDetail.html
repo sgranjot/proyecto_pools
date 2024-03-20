@@ -11,7 +11,10 @@
 <p>
     Fecha: {{ object.completion_date }}
 </p>
-
+<br>
+    <a href="{% url 'agendapersonal:updateTask' object.pk %}"><input type="button"  value="modificar"></input></a>
+    <a href="{% url 'agendapersonal:deleteTask' object.pk %}"><input type="button"  value="eliminar"></input></a>
+    <br><br><br>
 <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
 
 </body>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>¿Estás seguro de que quieres eliminar esta tarea?</h1>
+    <p>Título: {{ object.title }}</p>
+    <p>Fecha: {{ object.completion_date }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Eliminación</button>
+        <a href="{% url 'agendapersonal:taskDetail' object.pk %}"><input type="button"  value="Cancelar"></input></a>
+    </form>
+
+</body>
+</html>
