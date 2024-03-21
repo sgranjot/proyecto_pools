@@ -15,4 +15,5 @@ urlpatterns = [
     path('<int:pk>/updateTask/', views.UpdateTaskView.as_view(), name='updateTask'),     # ex: /agendapersonal/2/updateTask/
     path('<int:pk>/deleteEvent/', views.DeleteEventView.as_view(), name='deleteEvent'),  # ex: /agendapersonal/2/deleteEvent/
     path('<int:pk>/deleteTask/', views.DeleteTaskView.as_view(), name='deleteTask'),     # ex: /agendapersonal/2/deleteTask/
+    path('pastEvents/', views.PastEventsView.as_view(), name='pastEvents'),              # ex: /agendapersonal/pastEvents/
 ]

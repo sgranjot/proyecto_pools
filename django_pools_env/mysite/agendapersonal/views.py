@@ -84,4 +84,13 @@ class DeleteTaskView(generic.DeleteView):
     success_url = reverse_lazy('agendapersonal:indexTask')
 
 
+class PastEventsView(generic.ListView):
+    template_name = 'agendapersonal/indexEvent.html'
+    context_object_name = 'past_events_list'
+
+    def get_queryset(self):
+        """Return events that have finished"""
+        return Event.objects.filter(end_time__lte=timezone.now()).order_by('-start_time')
+        # __lte significa menor o igual que (less than or equal to)
+
 
