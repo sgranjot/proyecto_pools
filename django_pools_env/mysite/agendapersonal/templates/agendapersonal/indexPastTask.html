@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Tareas Completadas:</h1>
+
+    {% if past_tasks_list %}
+        <ul>
+            {% for obj in past_tasks_list %}
+                <li> {{ obj.title }}
+                <ul>
+                    <li>Tarea completada el {{ obj.completion_date }} </li>
+                </ul></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events are available.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="{% url 'agendapersonal:index' %}">Volver al inicio</a>
+
+</body>
+</html>
